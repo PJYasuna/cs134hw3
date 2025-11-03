@@ -74,6 +74,11 @@ hero-card {
   max-width: 800px;
 }
 
+hero-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
 hero-card h2 {
   color: #D2A679;
   margin-bottom: 0.5rem;
