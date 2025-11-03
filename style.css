@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
+  color-scheme: light dark; 
   --main-bg-color: #d2b48c;
   --nav-bg-color: #8b4513;
   --accent-color: #45a049;
@@ -11,8 +12,8 @@
 
 body {
   font-family: 'Roboto', Arial, sans-serif;
-  background-color: var(--main-bg-color, #deb887);
-  color: #333;
+  background-color: light-dark(var(--main-bg-color), #2a1810); 
+  color: light-dark(#333, #e0e0e0);
   padding: 2%;
   font-size: var(--font-size-base);
   min-height: 100dvh;
@@ -36,51 +37,53 @@ nav a {
   display: block;
   padding: 0.8em 1.5em;
   font-size: 1.2rem;
-  background-color: var(--nav-bg-color, brown);
-  color: var(--text-color, white);
+  background-color: light-dark(var(--nav-bg-color), #5a2d0f);
+  color: var(--text-color);
   text-decoration: none;
   border-radius: 0.5em;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-  background-color: var(--accent-color, green);
+  background-color: light-dark(var(--accent-color), #3a7a32);
   transform: scale(1.1);
 }
 
 fieldset {
-  border: 3px solid #8b4513;
+  border: 3px solid light-dark(#8b4513, #d2a679);
   border-radius: 8px;
   padding: 1rem;
-  background-color: #fffaf0;
+  background-color: light-dark(#fffaf0, #3d2817);
 }
 
 legend {
-  color: #8b4513;
+  color: light-dark(#8b4513, #d2a679);
   font-weight: bold;
 }
 
 hero-card {
   display: block;
-  border: 2px solid #D2A679;
+  border: 2px solid light-dark(#D2A679, #8b5a3c);
   border-radius: 12px;
   padding: 1.5rem;
   margin: 1rem auto;
-  background-color: color(display-p3 0.54 0.36 0.24);
-  color: color(display-p3 0.95 0.94 0.91);
+  background-color: light-dark(#8b5a3c, #1a0f0a);
+  color: light-dark(#2c1810, #f2f1ed);
   font-family: 'Roboto', sans-serif;
   animation: fadeIn 1.5s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
   max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 hero-card:hover {
   transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 24px light-dark(rgba(0, 0, 0, 0.3), rgba(210, 166, 121, 0.4));
+  border-color: light-dark(#FFD700, #ffa500);
 }
 
 hero-card h2 {
-  color: #D2A679;
+  color: light-dark(#D2A679, #FFD700);
   margin-bottom: 0.5rem;
 }
 
@@ -98,12 +101,12 @@ hero-card li {
 }
 
 hero-card li strong {
-  color: #FFD700;
-  background: rgba(255, 215, 0, 0.1);
+  color: light-dark(#b8860b, #FFD700);
+  background: light-dark(rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.2));
   padding: 0.1rem 0.3rem;
   border-radius: 4px;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  text-shadow: light-dark(none, 1px 1px 2px rgba(0,0,0,0.5));
   font-family: 'Georgia', serif;
 }
 
@@ -113,8 +116,13 @@ hero-card img {
   height: auto;
   margin: 0 auto 1rem;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px light-dark(rgba(0,0,0,0.2), rgba(0,0,0,0.5));
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+hero-card:hover img {
+  transform: scale(1.1);
 }
 
 .rta-image {
@@ -124,7 +132,7 @@ hero-card img {
   max-width: 600px;
   margin: 1rem auto;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px light-dark(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5));
 }
 
 @keyframes fadeIn {
